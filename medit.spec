@@ -1,5 +1,5 @@
 %define name     medit
-%define version  0.6.98
+%define version  0.8.5
 %define release  %mkrel 1
 
 Name:        %{name}
@@ -10,9 +10,9 @@ Group:       Editors
 License:     GPL
 URL:         http://ggap.sourceforge.net/medit/
 Source0:     http://prdownloads.sourceforge.net/ggap/%{name}-%{version}.tar.bz2
+Patch1:      medit-0.8.5-do-not-update-system-files.patch
 BuildRoot:   %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Requires:        libgtk+2.0_0 libxml2
-BuildRequires:   gtk2-devel libxml2-devel
+BuildRequires:   gtk2-devel libxml2-devel pcre-devel pygtk2.0-devel intltool
 
 %description
 Medit is a multiplatform GTK+2 text editor.
@@ -24,12 +24,11 @@ o Multiplatform - works both on unix and windows
 
 %prep
 %setup -q
+%patch1 -p1
 
 %build
 %configure2_5x \
-     --with-xml \
-     --without-pygtk \
-     --without-python
+     --with-xml
 
 %make
 
@@ -37,39 +36,29 @@ o Multiplatform - works both on unix and windows
 rm -rf %buildroot
 %makeinstall_std
 
-# menu
-mkdir -p %buildroot/%_menudir
-cat > %buildroot/%_menudir/%name << EOF
-?package(%name): \
-command="%_bindir/medit" \
-needs="x11" \
-icon="editors_section.png" \
-section="More Applications/Editors" \
-title="Medit" \
-longtitle="%summary"
-EOF
+%find_lang moo
 
 %post
 %update_menus
+%update_mime_database
+%update_icon_cache hicolor
 
 %postun
 %clean_menus
+%clean_mime_database
+%clean_icon_cache hicolor
 
 %clean
 rm -rf %buildroot
 
-
-%files
+%files -f moo.lang
 %defattr(-,root,root)
 %doc COPYING README
 %{_bindir}/*
 %{_datadir}/applications/%{name}.desktop
-%{_datadir}/moo/*.cfg
-%{_datadir}/moo/completion/*
-%{_datadir}/moo/syntax/*
+%{_datadir}/mime/packages/moo.xml
+#%{_datadir}/mime/text/*.xml
+%{_datadir}/moo
 %{_datadir}/pixmaps/*
-%{_libdir}/moo/plugins/*.py
-%{_libdir}/moo/plugins/lib/*.py
+%{_libdir}/moo
 %{_iconsdir}/hicolor/*/apps/medit.png
-
-%_menudir/%name
