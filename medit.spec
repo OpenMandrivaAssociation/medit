@@ -1,5 +1,5 @@
 %define name     medit
-%define version  0.8.5
+%define version  0.8.6
 %define release  %mkrel 1
 
 Name:        %{name}
@@ -8,7 +8,7 @@ Release:     %{release}
 Summary:     Multiplatform GTK+2 text editor
 Group:       Editors
 License:     GPL
-URL:         http://ggap.sourceforge.net/medit/
+URL:         http://mooedit.sourceforge.net/
 Source0:     http://prdownloads.sourceforge.net/ggap/%{name}-%{version}.tar.bz2
 Patch1:      medit-0.8.5-do-not-update-system-files.patch
 BuildRoot:   %{_tmppath}/%{name}-%{version}-%{release}-buildroot
