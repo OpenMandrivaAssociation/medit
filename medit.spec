@@ -1,5 +1,5 @@
 %define name     medit
-%define version  0.8.6
+%define version  0.8.8
 %define release  %mkrel 1
 
 Name:        %{name}
