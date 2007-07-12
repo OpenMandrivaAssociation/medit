@@ -36,7 +36,7 @@ o Multiplatform - works both on unix and windows
 rm -rf %buildroot
 %makeinstall_std
 
-%find_lang moo
+%find_lang moo moo moo-gsv
 
 %post
 %update_menus
@@ -62,3 +62,4 @@ rm -rf %buildroot
 %{_datadir}/pixmaps/*
 %{_libdir}/moo
 %{_iconsdir}/hicolor/*/apps/medit.png
+%{_mandir}/man1/*
