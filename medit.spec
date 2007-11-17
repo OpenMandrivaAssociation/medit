@@ -1,5 +1,5 @@
 %define name     medit
-%define version  0.8.10
+%define version  0.8.11
 %define release  %mkrel 1
 
 Name:        %{name}
@@ -19,7 +19,7 @@ Medit is a multiplatform GTK+2 text editor.
 Features:
 o Configurable syntax highlighting
 o Configurable keyboard accelerators
-o Multiplatform - works both on unix and windows 
+o Multiplatform - works both on unix and windows
 
 
 %prep
