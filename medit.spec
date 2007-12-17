@@ -11,7 +11,6 @@ License:     GPLv2+
 URL:         http://mooedit.sourceforge.net/
 Source0:     http://prdownloads.sourceforge.net/ggap/%{name}-%{version}.tar.bz2
 Patch1:      medit-0.8.5-do-not-update-system-files.patch
-BuildRoot:   %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:   gtk2-devel libxml2-devel pcre-devel pygtk2.0-devel intltool
 
 %description
