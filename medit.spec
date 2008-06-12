@@ -38,15 +38,19 @@ rm -rf %buildroot
 
 %find_lang moo moo moo-gsv
 
+%if %mdkversion < 200900
 %post
 %update_menus
 %update_mime_database
 %update_icon_cache hicolor
+%endif
 
+%if %mdkversion < 200900
 %postun
 %clean_menus
 %clean_mime_database
 %clean_icon_cache hicolor
+%endif
 
 %clean
 rm -rf %buildroot
