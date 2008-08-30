@@ -1,6 +1,6 @@
 %define name     medit
-%define version  0.9.2
-%define release  %mkrel 3
+%define version  0.9.4
+%define release  %mkrel 1
 
 Name:        %{name}
 Version:     %{version}
@@ -24,11 +24,11 @@ o Multiplatform - works both on unix and windows
 
 %prep
 %setup -q
-%patch1 -p1
+#patch1 -p1
 
 %build
 %configure2_5x \
-     --with-xml
+     --enable-generated-files=no
 
 %make
 
@@ -60,8 +60,6 @@ rm -rf %buildroot
 %doc COPYING README
 %{_bindir}/*
 %{_datadir}/applications/%{name}.desktop
-%{_datadir}/mime/packages/moo.xml
-#%{_datadir}/mime/text/*.xml
 %{_datadir}/moo
 %{_datadir}/pixmaps/*
 %{_libdir}/moo
