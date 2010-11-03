@@ -13,6 +13,7 @@ Source0:     http://downloads.sourceforge.net/mooedit/%{name}-%{version}.tar.bz2
 Patch1:      medit-0.9.2-do-not-update-system-files.patch
 BuildRoot:   %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:   gtk2-devel libxml2-devel pcre-devel pygtk2.0-devel intltool
+BuildRequires: cmake
 
 %description
 Medit is a multiplatform GTK+2 text editor.
