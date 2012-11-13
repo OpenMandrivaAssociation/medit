@@ -1,0 +1,12 @@
+diff -urN medit-1.1.0/moo/Makefile.in medit-1.1.0-patched/moo/Makefile.in
+--- medit-1.1.0/moo/Makefile.in	2012-03-04 22:37:45.000000000 +1100
++++ medit-1.1.0-patched/moo/Makefile.in	2012-03-24 01:48:49.558709770 +1100
+@@ -913,7 +913,7 @@
+ LDFLAGS = @LDFLAGS@
+ LIBM = @LIBM@
+ LIBOBJS = @LIBOBJS@
+-LIBS = @LIBS@
++LIBS = @LIBS@ -lgmodule-2.0
+ LIBTOOL = @LIBTOOL@
+ LIPO = @LIPO@
+ LN_S = @LN_S@
