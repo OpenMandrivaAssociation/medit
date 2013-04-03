@@ -1,6 +1,6 @@
 Name:		medit
 Version:	1.1.0
-Release:	%mkrel 1
+Release:	2
 Summary:	Multiplatform GTK+2 text editor
 Group:		Editors
 License:	GPLv2+
@@ -12,7 +12,7 @@ BuildRequires:	libxml2-devel
 BuildRequires:	intltool
 BuildRequires:	python-devel
 BuildRequires:	pygtk2.0-devel
-BuildRequires:	libsm-devel
+BuildRequires:	pkgconfig(sm)
 BuildRequires:	imagemagick
 
 %description
@@ -31,7 +31,6 @@ o Multiplatform - works both on unix and windows
 %make
 
 %install
-%__rm -rf %{buildroot}
 %makeinstall_std
 
 # more icon sizes, 48x48 is already installed by make install
@@ -46,11 +45,8 @@ done
 %find_lang medit-1 medit-1-gsv
 %endif
 
-%clean
-%__rm -rf %{buildroot}
-
 %files -f medit-1.lang
-%doc COPYING README
+%doc README
 %doc %{_defaultdocdir}/medit-1
 %{_bindir}/medit
 %{_datadir}/applications/*.desktop
