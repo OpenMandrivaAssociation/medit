@@ -1,6 +1,6 @@
 Name:		medit
 Version:	1.1.1
-Release:	1
+Release:	2
 Summary:	Multiplatform GTK+2 text editor
 Group:		Editors
 License:	GPLv2+
