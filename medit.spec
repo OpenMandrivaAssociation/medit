@@ -4,7 +4,7 @@ Release:	2
 Summary:	Multiplatform GTK+2 text editor
 Group:		Editors
 License:	GPLv2+
-URL:		http://mooedit.sourceforge.net/
+URL:		https://mooedit.sourceforge.net/
 Source0:	http://downloads.sourceforge.net/mooedit/%{name}-%{version}.tar.bz2
 Patch0:		medit-1.1.0-dso.patch
 BuildRequires:	gtk2-devel
